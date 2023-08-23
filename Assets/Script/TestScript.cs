@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class TestScript : MonoBehaviour
 {
+
+    float potato = 1;
+
+
     // Start is called before the first frame update
     void Start()
     {
