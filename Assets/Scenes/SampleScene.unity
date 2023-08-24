@@ -246,7 +246,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b64be639ca9a664183106c128af558e, type: 3}
   m_PrefabInstance: {fileID: 1421777791}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &962693934
+--- !u!114 &962693936
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,8 +260,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileMaterial: {fileID: 2100000, guid: 13435bd81d0d18d4294f5221d51e201a, type: 2}
   tileSize: 1
-  yOffset: 0.5
-  boardCenter: {x: -4, y: 0, z: -4}
+  yOffset: 0.2
+  boardCenter: {x: -4, y: -0.299, z: -4}
+  deathSize: 0.5
+  deathSpacing: 0.5
+  prefabs:
+  - {fileID: 7447462009917266271, guid: b114de283f45da24d929e62af7adc81f, type: 3}
+  - {fileID: 1529710890169993947, guid: 89e247774e96c2245a901077c85bf4e5, type: 3}
+  - {fileID: 6067665524466595169, guid: 801a686d8515fcc4eb39bce7d0dd0a6c, type: 3}
+  - {fileID: 6711327547504855288, guid: 5bf120b765cfb08489f78f9b3953ce4c, type: 3}
+  - {fileID: 652916263302449144, guid: 283126011293d2c4db65620adbefe1ca, type: 3}
+  - {fileID: 6067665524466595169, guid: 801a686d8515fcc4eb39bce7d0dd0a6c, type: 3}
+  teamMaterials:
+  - {fileID: 2100000, guid: f1c74c9793c20c74f9adaaa5f21546ea, type: 2}
+  - {fileID: 2100000, guid: 604da56f34cb0e84ead43fd8faf4f349, type: 2}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,7 +481,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b64be639ca9a664183106c128af558e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 962693934}
+      addedObject: {fileID: 962693936}
   m_SourcePrefab: {fileID: 100100000, guid: 5b64be639ca9a664183106c128af558e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
