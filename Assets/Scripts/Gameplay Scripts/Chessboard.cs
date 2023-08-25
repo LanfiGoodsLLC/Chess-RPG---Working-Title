@@ -226,27 +226,27 @@ public class Chessboard : MonoBehaviour
 
         //white team
         chessPieces[0, 0] = SpawnSinglePiece(ChessPieceType.Rook, whiteTeam);
-// chessPieces[1, 0] = SpawnSinglePiece(ChessPieceType.Knight, whiteTeam);
-       // chessPieces[2, 0] = SpawnSinglePiece(ChessPieceType.Bishop, whiteTeam);
-      //  chessPieces[3, 0] = SpawnSinglePiece(ChessPieceType.Queen, whiteTeam);
+        chessPieces[1, 0] = SpawnSinglePiece(ChessPieceType.Knight, whiteTeam);
+        chessPieces[2, 0] = SpawnSinglePiece(ChessPieceType.Bishop, whiteTeam);
+        chessPieces[3, 0] = SpawnSinglePiece(ChessPieceType.Queen, whiteTeam);
         chessPieces[4, 0] = SpawnSinglePiece(ChessPieceType.King, whiteTeam);
-      //  chessPieces[5, 0] = SpawnSinglePiece(ChessPieceType.Bishop, whiteTeam);
-      //  chessPieces[6, 0] = SpawnSinglePiece(ChessPieceType.Knight, whiteTeam);
+        chessPieces[5, 0] = SpawnSinglePiece(ChessPieceType.Bishop, whiteTeam);
+        chessPieces[6, 0] = SpawnSinglePiece(ChessPieceType.Knight, whiteTeam);
         chessPieces[7, 0] = SpawnSinglePiece(ChessPieceType.Rook, whiteTeam);
-       // for (int i = 0; i < TILE_COUNT_X; i++)
-         //   chessPieces[i, 1] = SpawnSinglePiece(ChessPieceType.Pawn, whiteTeam);
+        for (int i = 0; i < TILE_COUNT_X; i++)
+            chessPieces[i, 1] = SpawnSinglePiece(ChessPieceType.Pawn, whiteTeam);
 
         //Black Team
         chessPieces[0, 7] = SpawnSinglePiece(ChessPieceType.Rook, blackTeam);
-      //  chessPieces[1, 7] = SpawnSinglePiece(ChessPieceType.Knight, blackTeam);
-       // chessPieces[2, 7] = SpawnSinglePiece(ChessPieceType.Bishop, blackTeam);
-      //  chessPieces[3, 7] = SpawnSinglePiece(ChessPieceType.Queen, blackTeam);
+        chessPieces[1, 7] = SpawnSinglePiece(ChessPieceType.Knight, blackTeam);
+        chessPieces[2, 7] = SpawnSinglePiece(ChessPieceType.Bishop, blackTeam);
+        chessPieces[3, 7] = SpawnSinglePiece(ChessPieceType.Queen, blackTeam);
         chessPieces[4, 7] = SpawnSinglePiece(ChessPieceType.King, blackTeam);
-       // chessPieces[5, 7] = SpawnSinglePiece(ChessPieceType.Bishop, blackTeam);
-       // chessPieces[6, 7] = SpawnSinglePiece(ChessPieceType.Knight, blackTeam);
+        chessPieces[5, 7] = SpawnSinglePiece(ChessPieceType.Bishop, blackTeam);
+        chessPieces[6, 7] = SpawnSinglePiece(ChessPieceType.Knight, blackTeam);
         chessPieces[7, 7] = SpawnSinglePiece(ChessPieceType.Rook, blackTeam);
-       // for (int i = 0; i < TILE_COUNT_X; i++)
-          //  chessPieces[i, 6] = SpawnSinglePiece(ChessPieceType.Pawn, blackTeam);
+        for (int i = 0; i < TILE_COUNT_X; i++)
+            chessPieces[i, 6] = SpawnSinglePiece(ChessPieceType.Pawn, blackTeam);
 
 
     }
@@ -414,7 +414,7 @@ public class Chessboard : MonoBehaviour
                     PositionSinglePiece(3, 0);
                     chessPieces[0, 0] = null;
                  }
-                 else if (lastMove[1].x == 7) // black side
+                 else if (lastMove[1].y == 7) // black side
                  {
                     ChessPieces rook = chessPieces[0, 7];
                     chessPieces[3, 7] = rook;
@@ -432,7 +432,7 @@ public class Chessboard : MonoBehaviour
                     PositionSinglePiece(5, 0);
                     chessPieces[7, 0] = null;
                 }
-                else if (lastMove[1].x == 7) // black side
+                else if (lastMove[1].y == 7) // black side
                 {
                     ChessPieces rook = chessPieces[7, 7];
                     chessPieces[5, 7] = rook;
