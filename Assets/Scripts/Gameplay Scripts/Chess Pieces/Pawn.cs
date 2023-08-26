@@ -43,9 +43,14 @@ public class Pawn : ChessPieces
     }
 
     public override SpecialMove GetSpecialMoves(ref ChessPieces[,] board, ref List<Vector2Int[]> moveList, ref List<Vector2Int> availableMoves)
+
     {
 
         int direction = (team == 0) ? 1 : -1;
+
+        //queening
+        if((team == 0 && currentY == 6) || (team == 1 && currentY == 1))
+                return SpecialMove.Promotion;
 
         //En Passant 
         if(moveList.Count > 0)
