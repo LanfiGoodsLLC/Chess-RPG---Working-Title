@@ -72,6 +72,14 @@ public class Server : MonoBehaviour
         AcceptNewConnections();
         UpdateMessagePump();
     }
+    private void KeepAlive()
+    {
+        if(Time.time - lastKeepAlive > keepAliveTickRate)
+        {
+            lastKeepAlive = Time.time;
+            Broadcast(new NetKeepAlive());
+        }
+    }
 
     //look at all connections
     private void CleanupConnections()
@@ -134,7 +142,7 @@ public class Server : MonoBehaviour
         for (int i = 0; i < connections.Length; i++)
             if(connections[i].IsCreated)
             {
-                Debug.Log($"Sending {msg.Code} to : {connections[i].InternalId}");
+               //Debug.Log($"Sending {msg.Code} to : {connections[i].InternalId}");
                 SendToClient(connections[i], msg);
             }
 

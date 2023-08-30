@@ -27,7 +27,7 @@ public class Client : MonoBehaviour
         driver = NetworkDriver.Create();
         NetworkEndpoint endpoint = NetworkEndpoint.Parse(ip, port);
 
-        connection = driver.Connect(endpoint);
+        connection = driver.Connect(endpoint); //localhost 127.0.0.1
 
         Debug.Log("Attempting to connect to server on " + endpoint.Address);
 
@@ -78,6 +78,7 @@ public class Client : MonoBehaviour
                 if(cmd == NetworkEvent.Type.Connect)
                 {
                 SendToServer(new NetWelcome());
+                Debug.Log("We're connected");
                 }
 
                 else if (cmd == NetworkEvent.Type.Data)
@@ -95,7 +96,7 @@ public class Client : MonoBehaviour
         
     }
 
-    private void SendToServer(NetMessage msg)
+    public void SendToServer(NetMessage msg)
     {
         DataStreamWriter writer; // get box
         driver.BeginSend(connection, out writer); // write address on box
@@ -107,11 +108,11 @@ public class Client : MonoBehaviour
 
     private void RegisterToEvent()
     {
-        NetUtility.C_KEEP_ALIVE += OnKeepAlive();
+        NetUtility.C_KEEP_ALIVE += OnKeepAlive;
     }
     private void UnregisterToEvent()
     {
-        NetUtility.C_KEEP_ALIVE -= OnKeepAlive();
+        NetUtility.C_KEEP_ALIVE -= OnKeepAlive;
     }
     private void OnKeepAlive(NetMessage nm)
     {
